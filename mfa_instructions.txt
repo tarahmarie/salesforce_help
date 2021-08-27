@@ -1,0 +1,12 @@
+After a horrifying day trying to figure out how to simply enable MFA for my company's users on Salesforce.com, I have edited down into the tiniest and shortest flow possible the instructions for getting this working for you. I've synthesized the instruction video here that the (I'm sure lovely) Salesforce social media person tweeted at me, fixed the inaccuracies in that video, and reduced down all the instructions I found online to these ten steps. If you can see a way to improve on this, please, submit a PR or let me know tarah@redqueentech.com or @tarah on Twitter. Hug (figuratively and in a socially distanced manner) a user today, and build better and simpler security tools! Original tweet thread here: https://twitter.com/tarah/status/1430973286242938881
+
+1. Append this to the end of your Salesforce URL /lightning/setup/PermSets/home e.g. https://yourcompanyname.lightning.force.com/lightning/setup/PermSets/home and go.
+2. Click on the “New” button in the middle of the page.
+3. Fill in the Label, API Name, and Description with whatever you want (I used “MFA”). Click “Save.”
+4. In the “Find Settings…” box (basically the same place on the page as that “New” button was), enter enough of this string [Multi-Factor Authentication for User Interface Logins] that you find the setting. No, you can’t edit it yet.
+5. Merciful Zeus on toast, now scroll to the top of the screen and click “Edit”. 
+6. Scroll back down to where that setting was on the page, and click the box to select it.  Mercifully, these settings are in alphabetical order. No, you can’t just come directly to this page without doing that search above; it’s some kind of frame that is only generated when you search for a setting so you can edit it.
+7. Scroll back up to the top, click “Save”, click “Save” in the confirm dialog box.
+8. Now click on “Manage Assignments”. Click “Add Assignments.” Click the box next to “Action” to select all the users on this page (I don’t know if that will select all users if there’s pagination; I don’t have that many users in SF). Click “Assign.”
+9. Logout, then log back in. You do NOT have to use Salesforce Authenticator. I picked “Choose Another Verification Method” and “Use verification codes from an authenticator app.” Use your preferred app; I like OTP Auth since I can save seeds and restore to another device if needed. 
+10. Congrats; MFA is enabled for your users. Enjoy a tasty beverage. Or throw a rock through a window. Whatever.
